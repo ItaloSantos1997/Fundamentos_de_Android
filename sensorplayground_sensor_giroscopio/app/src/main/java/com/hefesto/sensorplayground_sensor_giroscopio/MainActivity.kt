@@ -5,17 +5,15 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-
 
 class MainActivity() : AppCompatActivity(), SensorEventListener {
     private var text: TextView? = null
     private lateinit var sensorManager: SensorManager
     private lateinit var gyroscopeSensor: Sensor
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +43,6 @@ class MainActivity() : AppCompatActivity(), SensorEventListener {
         val y: Float = event.values[1]
         val z: Float = event.values[2]
 
-        text!!.text = "x = %1.f rad/s, y = %1.f rad/s, z = %1.f rad/s ".format(x, y, z)
+        text!!.text = "x = %.1f rad/s, y = %.1f rad/s, z = %.1f rad/s".format(x, y, z)
     }
 }
