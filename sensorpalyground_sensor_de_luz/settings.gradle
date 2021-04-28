@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "sensorpalyground_sensor_de_luz"
